@@ -1,3 +1,19 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+### Backend ###
+# S3
+###############
+
+terraform {
+  backend "s3" {
+    bucket = "khatrig-githubaction"
+    key = "lambda-test.tfstate"
+    region = "us-east-1"
+  }
+}
+
 ####
 resource "aws_iam_policy" "lambda policy" {
   name         = "lambda_policy"
