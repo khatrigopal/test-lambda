@@ -5,7 +5,7 @@ locals {
 data "archive_file" "welcome" {
   type        = "zip"
   source_file = "welcome.py"
-  output_path = "${local.lmbda_zip_location}"
+  output_path = "${local.lambda_zip_location}"
 }
 
 resource "aws_lambda_function" "terraform_lambda_func" {
