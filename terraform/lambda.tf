@@ -9,7 +9,7 @@ data "archive_file" "welcome" {
 }
 
 resource "aws_lambda_function" "terraform_lambda_func" {
-  filename                       =  "${local.lmbda_zip_location}"
+  filename                       =  "${local.lambda_zip_location}"
   function_name                  =  "welcome"
   role                           =  "${aws_iam_role.lambda_role.arn}"
   handler                        =  "welcome.hello"
