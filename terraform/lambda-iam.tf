@@ -18,7 +18,6 @@ terraform {
 resource "aws_iam_role_policy" "lambda-policy" {
   name         = "lambda_policy"
   role = "${aws_iam_role.lambda_role.id}"
-  description  = "AWS IAM Policy for managing aws lambda role"
   policy = "${file("iam/lambda-policy.json")}"
 }
 
